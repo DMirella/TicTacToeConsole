@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <cstdlib>
 
+namespace {
 enum class CellState {
   kEmpty = 0,
   kZero,
@@ -23,9 +24,15 @@ enum class GameWinState {
 };
 
 const int kDeskSize = 3;
+}  //end
 
 class Cell {
  public:
+  Cell(const Cell& cell) = delete;
+  Cell(Cell&& cell) = delete;
+  Cell& operator=(const Cell& cell) = delete;
+  Cell& operator=(Cell&& cell) = delete;
+
   Cell();
 
   void Show();
@@ -38,6 +45,13 @@ class Cell {
 
 class GameDesk {
  public:
+  GameDesk(const GameDesk& game_desk) = delete;
+  GameDesk(GameDesk&& game_desk) = delete;
+  GameDesk& operator=(const GameDesk& game_desk) = delete;
+  GameDesk& operator=(GameDesk&& game_desk) = delete;
+
+  GameDesk() {}
+
   void Show();
   void Reset();
 
@@ -49,6 +63,13 @@ class GameDesk {
 
 class Game {
  public:
+  Game(const Game& game) = delete;
+  Game(Game&& game) = delete;
+  Game& operator=(const Game& game) = delete;
+  Game& operator=(Game&& game) = delete;
+
+  Game();
+
   void InitNewGame();
   void StartGame();
 

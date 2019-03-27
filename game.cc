@@ -48,6 +48,11 @@ void GameDesk::Reset() {
 
 
 // Game
+Game::Game()
+  : is_game_over_(false)
+  , player_turn_(PlayerTurn::kPlayer1) {
+}
+
 void Game::InitNewGame() {
   is_game_over_ = false;
   player_turn_ = PlayerTurn::kPlayer1;
